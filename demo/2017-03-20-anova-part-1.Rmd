@@ -1,0 +1,330 @@
+---
+title: Linear Regression and ANOVA shaken and stirred (Part 1)
+author: Mauricio Vargas S. 帕夏
+date: 2017-03-20
+categories: Statistics
+tags: ["R", "Linear regression"]
+summary: These concepts are understood as separate concepts most of the times. The truth is they are extremely related to each other.
+---
+
+```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
+knitr::opts_chunk$set(message = F, error = F, warning = F, cache = T, comment = NA, fig.align = "center", dpi = 100, fig.width = 6, fig.height = 5, tidy = F, cache.path = ".2017-03-20-anova-part-1/")
+```
+
+*Updated 2018-03-27*
+
+# Motivation
+
+Linear Regression and ANOVA concepts are understood as separate concepts most of the times. The truth is they are extremely related to each other being ANOVA a particular case of Linear Regression. 
+
+Even worse, its quite common that students do memorize equations and tests instead of trying to understand Linear Algebra and Statistics concepts that can keep you away from misleading results, but that is material for another entry.
+
+Most textbooks present econometric concepts and algebraic steps and do empathise about the relationship between Ordinary Least Squares, Maximum Likelihood and other methods to obtain estimates in Linear Regression.
+
+Here I present a combination of little algebra and R commands to try to clarify some concepts.
+
+# Linear Regression
+
+Let $\renewcommand{\vec}[1]{\boldsymbol{#1}} \newcommand{\R}{\mathbb{R}} \vec{y} \in \R^n$ be the outcome and $X \in \mathbb{R}^{n\times p}$ be the design matrix in the context of a general model with intercept:
+$$\vec{y} = X\vec{\beta} + \vec{e}$$
+
+Being: $$
+\underset{n\times 1}{\vec{y}} = \begin{pmatrix}y_0 \cr y_1 \cr \vdots \cr y_n\end{pmatrix}
+\text{ and }
+\underset{n\times p}{X} = \begin{pmatrix}1 & x_{11} & & x_{1p} \cr 1 & x_{21} & & x_{2p} \cr & \ddots & \cr 1 & x_{n1} & & x_{np}\end{pmatrix} = (\vec{1} \: \vec{x}_1 \: \ldots \: \vec{x}_p)
+$$
+
+In linear models the aim is to minimize the error term by chosing $\hat{\vec{\beta}}$. One possibility is to minimize the squared error by solving this optimization problem:
+$$
+\begin{equation}
+\label{min}
+\displaystyle \min_{\vec{\beta}} S = \|\vec{y} - X\vec{\beta}\|^2
+\end{equation}
+$$ 
+
+Books such as [Baltagi](https://www.amazon.com/Econometrics-Springer-Texts-Business-Economics/dp/3642200583) discuss how to solve $\eqref{min}$ and other equivalent approaches that result in this optimal estimator:
+$$
+\begin{equation}
+\label{beta}
+\hat{\vec{\beta}} = (X^tX)^{-1} X^t\vec{y}
+\end{equation}
+$$
+
+With one independent variable and intercept, this is $y_i = \beta_0 + \beta_1 x_{i1} + e_i$, equation $\eqref{beta}$ means:
+$$
+\begin{equation}
+\label{beta2}
+\hat{\beta}_1 = cor(\vec{y},\vec{x}) \cdot \frac{sd(\vec{y})}{sd(\vec{x})} \text{ and } \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{\vec{x}}
+\end{equation}
+$$
+
+## Coding example with mtcars dataset
+
+Consider the model:
+$$mpg_i = \beta_1 wt_i + \beta_2 cyl_i + e_i$$
+
+This is how to write that model in R notation:
+```{r anova_mtcars_example1}
+lm(mpg ~ wt + cyl, data = mtcars)
+```
+
+Or written in matrix form:
+```{r anova_mtcars_example2}
+y <- mtcars$mpg
+x0 <- rep(1, length(y))
+x1 <- mtcars$wt
+x2 <- mtcars$cyl
+X <- cbind(x0,x1,x2)
+```
+
+It's the same to use `lm` or to perform a matrix multiplication because of equation $\eqref{beta}$:
+```{r anova_mtcars_example3}
+fit <- lm(y ~ x1 + x2)
+coefficients(fit)
+
+beta <- solve(t(X)%*%X) %*% (t(X)%*%y)
+beta
+```
+
+## Coding example with Galton dataset
+
+Equation $\eqref{beta2}$ can be verified with R commands:
+```{r anova_galton_example1}
+if (!require(pacman)) install.packages("pacman")
+p_load(HistData)
+
+# read the documentation
+# ??Galton
+
+y <- Galton$child
+x <- Galton$parent
+beta1 <- cor(y, x) *  sd(y) / sd(x)
+beta0 <- mean(y) - beta1 * mean(x)
+
+c(beta0, beta1)
+
+#comparing with lm results
+lm(y ~ x)
+```
+
+## Coding example with mtcars dataset and mean centered regression 
+
+Another possibility in linear models is to rewrite the observations in the outcome and the design matrix with respect to the mean of each variable. That will only alter the intercept but not the slope coefficients.
+
+So, for a model like $y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + e_i$ I can write the equivalent model:
+$$y_i - \bar{y} = \beta_0 + \beta_1 (x_{i1} - \bar{x}_{i1}) + \beta_2 (x_{i2} - \bar{x}_{i2}) + e_i$$
+
+Another possibility is to consider that $\bar{y}_i = \beta_0 + \beta_1 \bar{x}_{i1} + \beta_2 \bar{x}_{i2} + 0$ under the classical assumption $\bar{e}_i = 0$ and substracting I obtain:
+$$y_i - \bar{y} = \beta_1 (x_{i1} - \bar{x}_{i1}) + \beta_2 (x_{i2} - \bar{x}_{i2}) + e_i$$
+
+I'll analyze the first case, without dropping $\beta_0$ unless there's statistical evidence to show its not significant.
+
+In R notation the model $y_i - \bar{y} = \beta_0 + \beta_1 (x_{i1} - \bar{x}_{i1}) + \beta_2 (x_{i2} - \bar{x}_{i2}) + e_i$ can be fitted in this way:
+```{r anova_mtcars_example4}
+# read the documentation
+# ??mtcars
+
+new_y <- mtcars$mpg - mean(mtcars$mpg)
+new_x1 <- mtcars$wt - mean(mtcars$wt)
+new_x2 <- mtcars$cyl - mean(mtcars$cyl)
+
+fit2 <- lm(new_y ~ new_x1 + new_x2)
+coefficients(fit2)
+
+new_X <- cbind(x0,new_x1,new_x2)
+new_beta <- solve(t(new_X)%*%new_X) %*% (t(new_X)%*%new_y)
+new_beta
+```
+
+Here the intercept is close to zero, so I can obtain more information to check significance:
+```{r anova_mtcars_example5}
+summary(fit2)
+```
+
+In this particular case I should drop the intercept because its not significant so I write:
+```{r anova_mtcars_example6}
+fit3 <- lm(new_y ~ new_x1 + new_x2 - 1)
+coefficients(fit3)
+
+new_X <- cbind(new_x1,new_x2)
+new_beta <- solve(t(new_X)%*%new_X) %*% (t(new_X)%*%new_y)
+new_beta
+```
+
+# Residuals
+
+The total sum of squares is defined as the sum of explained and residual (or unexplained) sum of squares or, in other words, the sum of explained and unexplained variance in the model:
+$$TSS = ESS + RSS = \sum_i (\hat{y}_i - \bar{y})^2 + \sum_i (y_i - \hat{y}_i)^2 = \sum_i (y_i - \bar{y})^2 $$
+Being $\hat{\vec{y}} = X\hat{\vec{\beta}}$.
+
+Here $TSS$ follows a $F(p,n-1)$ distribution with $n-1$ degrees of freedom. This is, $ESS$ has $p$ degrees of freedom and $RSS$ has $n-p-1$ degrees of freedom and the F-statistic is:
+$$
+F = \frac{ESS/p}{RSS/(n-p-1)}
+$$
+This statistic tests the null hypothesis $\vec{\beta} = \vec{0}$. This is, the F-statistic provides information about the joint effect of all the variables in the model together and therefore p-values are required to determine single coefficients' significance.
+
+# ANOVA 
+
+The term *analysis of variance* refers to categorical predictors so ANOVA is a particular case of the linear model that works around the statistical test just described and the difference in group means.
+
+ANOVA is a particular case of the linear model where predictors (or independent variables) are dummy variables that reflect if an observation belongs to a certain group. An example of this would be $x_{i1} = 1$ if observation $i$ belongs to a group of interest (e.g. the interviewed person is in the group of people who has a Twitter account) and $x_{i1} = 0$ otherwise. 
+
+The null hypothesis in ANOVA is "group means are all equal" as I'll explain with examples. This comes from the fact that regression coefficients in ANOVA measure the effect of belonging to a group, and as its explained about F test you can examinate the associated p-value to a regression coefficient to check if the group effect is statistically different from zero (e.g. if you have a group of people who uses social networks and a subgroup of people who use Twitter, then if the dummy variable that expresses Twitter using has a non-significative regression coefficient, then you have to evidence to state that group means are different)
+
+## An example with mtcars dataset
+
+In the `mtcars` dataset, `am` can be useful to explain ANOVA as its observations are defined as:
+$$
+am_i = \begin{cases}1 &\text{ if car } i \text{ is manual} \cr 0 &\text{ if car } i \text{ is automatic}\end{cases}
+$$
+
+### Case 1
+
+Consider a model where the outcome is `mpg` and the design matrix is $X = (\vec{x}_1 \: \vec{x}_2)$ so that the terms are defined in this way:
+```{r anova_mtcars_example7}
+y <- mtcars$mpg
+x1 <- mtcars$am 
+x2 <- ifelse(x1 == 1, 0, 1)
+```
+
+This is:
+$$
+x_1 = \begin{cases}1 &\text{ if car } i \text{ is manual} \cr 0 &\text{ if car } i \text{ is automatic}\end{cases}
+\quad \quad
+x_2 = \begin{cases}1 &\text{ if car } i \text{ is automatic} \cr 0 &\text{ if car } i \text{ is manual}\end{cases}
+$$
+
+The estimates without intercept would be:
+```{r anova_mtcars_example8}
+fit <- lm(y ~ x1 + x2 - 1)
+fit$coefficients
+```
+
+Taking $\eqref{beta}$ and replacing in this particular case would result in this estimate:
+$$
+\hat{\vec{\beta}} = \begin{bmatrix}\bar{y}_1 \cr \bar{y}_2 \end{bmatrix}
+$$
+being $\bar{y}_1$ and $\bar{y}_2$ the group means. 
+
+This can be verified with R commands:
+```{r anova_mtcars_example9}
+y1 <- y*x1; y1 <- ifelse(y1 == 0, NA, y1)
+y2 <- y*x2; y2 <- ifelse(y2 == 0, NA, y2)
+
+mean(y1, na.rm = TRUE)
+mean(y2, na.rm = TRUE)
+```
+
+If you are not convinced of this result you can write down the algebra or use R commands. I'll do the last with the notation $U = (X^tX)^{-1}$ and $V = X^t\vec{y}$:
+```{r anova_mtcars_example10}
+X <- cbind(x1,x2)
+U <- solve(t(X)%*%X)
+V <- t(X)%*%y
+
+U;V;U%*%V
+```
+$U$ entries are just one over the number of observations of each group and V entries are the sum of `mpg` observations of each group so that the entries of $UV$ are the means of each group:
+```{r anova_mtcars_example11}
+u11 <- 1/sum(x1)
+u22 <- 1/sum(x2)
+
+v11 <- sum(y1, na.rm = TRUE)
+v21 <- sum(y2, na.rm = TRUE)
+
+u11;u22
+v11;v21
+u11*v11;u22*v21
+```
+
+Aside from algebra, now I'll show the equivalency between `lm` and `aov` that is the command used to perform an analysis of variance: 
+```{r anova_mtcars_example12}
+y <- mtcars$mpg
+x1 <- mtcars$am
+x2 <- ifelse(x1 == 1, 0, 1)
+
+fit2 <- aov(y ~ x1 + x2 - 1)
+fit2$coefficients
+```
+
+### Case 2
+
+Changing the design matrix to $X = (\vec{1} \: \vec{x}_1)$ will lead to the estimate:
+$$
+\hat{\vec{\beta}} = \begin{bmatrix}\bar{y}_2 \cr \bar{y}_1 - \bar{y}_2 \end{bmatrix}
+$$
+Fitting the model results in:
+```{r anova_mtcars_example13}
+y <- mtcars$mpg
+x1 <- mtcars$am
+
+fit <- lm(y ~ x1)
+fit$coefficients
+```
+
+So to see the relationship between the estimates and the group means I need additional steps:
+```{r anova_mtcars_example14}
+x0 <- rep(1,length(y))
+X <- cbind(x0,x1)
+beta <- solve(t(X)%*%X) %*% (t(X)%*%y)
+beta
+```
+
+I did obtain the same estimates with `lm` command so now I calculate the group means:
+```{r anova_mtcars_example15}
+x2 <- ifelse(x1 == 1, 0, 1)
+
+x1 <- ifelse(x1 == 0, NA, x1)
+x2 <- ifelse(x2 == 0, NA, x2)
+
+m1 <- mean(y*x1, na.rm = TRUE)
+m2 <- mean(y*x2, na.rm = TRUE)
+
+beta0 <- m2
+beta1 <- m1 - m2
+
+beta0;beta1
+```
+In this case this means that the slope for the two groups is the same but the intercept is different, and therefore exists a positive effect of manual transmission on miles per gallon in average terms.
+
+Again I'll verify the equivalency between `lm` and `aov` in this particular case:
+```{r anova_mtcars_example16}
+y <- mtcars$mpg
+x1 <- mtcars$am
+x2 <- ifelse(x1 == 1, 0, 1)
+
+fit2 <- aov(y ~ x1)
+fit2$coefficients
+```
+
+A simpler way to write the model is:
+```{r anova_mtcars_example17}
+fit3 <- lm(mpg ~ am, data = mtcars)
+summary(fit3)
+```
+
+I can calculate the residuals by hand:
+```{r anova_mtcars_example18}
+mean_mpg <- mean(mtcars$mpg)
+fitted_mpg <- fit3$coefficients[1] + fit3$coefficients[2]*mtcars$am
+observed_mpg <- mtcars$mpg
+
+TSS <- sum((observed_mpg - mean_mpg)^2) 
+ESS <- sum((fitted_mpg - mean_mpg)^2)
+RSS <- sum((observed_mpg - fitted_mpg)^2)
+
+TSS;ESS;RSS
+```
+
+Here its verified that $TSS = ESS + RSS$ but aside from that I can extract information from `aov`:
+```{r anova_mtcars_example19}
+summary(fit2)
+```
+And check that, as expected, $ESS$ is the variance explained by `x1`. 
+
+I also can run ANOVA over `lm` with:
+```{r anova_mtcars_example20}
+anova(fit3)
+```
+The table provides information on the effect of `am` over `mpg`. In this case the null hypothesis is rejected because of the large F-value and the associated p-values. 
+
+Considering a 0.05 significance threshold I can say, with 95% of confidence, that the regression slope is statistically different from zero or that there is a difference in group means between automatic and manual transmission.

@@ -1,0 +1,45 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <p style="font-family: 'Fira Sans','Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;">
+      {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="{{ .Site.BaseURL }}">Inicio</a> </li>
+      {{ range .Site.Menus.main -}}
+        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+      {{- end }}
+    </ul>
+
+      <ul style="padding: 0;list-style-type: none;display: flex;justify-content: space-between;">
+        <li>
+          <a target="_blank" href="mailto:marta.apablaza@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+
+        <li>
+          <a target="_blank" href="https://mapablaza.github.io/blog">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+
+        <li>
+          <a target="_blank" href="https://github.com/mapablaza">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+
+        <li>
+          <a target="_blank" href="https://twitter.com/mvar15">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+
+    <p style="font-family: 'Fira Sans','Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;">{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{ now.Format "2006"}}. Hecho con gh-pages ♥. {{end}}</p>
+  </div>
+</div>

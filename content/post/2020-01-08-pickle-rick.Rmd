@@ -1,0 +1,14 @@
+---
+title: "I'm a Pickle"
+author: 'Marta Apablaza R'
+date: 2020-01-07
+categories: ['Datos']
+tags: ['Michael Stonebreaker', 'BigData', 'ComputerScience', 'CienciasdelaComputación', 'Datos']
+summary: 'Vean Rick and Morty'
+---
+
+```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
+knitr::opts_chunk$set(message = F, error = F, warning = F, cache = T, comment = NA, fig.align = "center", dpi = 100, fig.width = 6, fig.height = 5, tidy = F)
+```
+
+I'm Pickle Rick!

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marta Apablaza</title>
+    <link>/blog/</link>
+    <description>Recent content on Marta Apablaza</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-cl</language>
+    <lastBuildDate>Tue, 07 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I&#39;m a Pickle</title>
+      <link>/blog/2020/01/07/im-a-pickle/</link>
+      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020/01/07/im-a-pickle/</guid>
+      <description>
+
+
+&lt;p&gt;I’m Pickle Rick!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Michael Stonebreaker: “La privacidad de los datos es un tema legal y no técnico”</title>
+      <link>/blog/2020/01/07/michael-stonebreaker-la-privacidad-de-los-datos-es-un-tema-legal-y-no-t%C3%A9cnico/</link>
+      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020/01/07/michael-stonebreaker-la-privacidad-de-los-datos-es-un-tema-legal-y-no-t%C3%A9cnico/</guid>
+      <description>
+
+
+&lt;p&gt;El científico quien ayudó a crear la mayoría de las bases de datos relacionales del mercado, reflexiona sobre la manera en que los datos son usados en el mundo empresarial al mismo tiempo que afirma que el uso y privacidad de los datos médicos de las personas es un tema que debe reflexionar la sociedad en conjunto y no sólo los cientistas de datos.&lt;/p&gt;
+&lt;p&gt;“Una de las primeras cosas que le digo a cada empresa que conozco es que deben tener una estrategia de integración de datos”, indica Michael Stonebreaker, Premio Turing 2014 y creador del concepto “Big data” en un break del Heildelberg Laurate Forum.&lt;/p&gt;
+&lt;p&gt;“Este consejo se lo digo incluso a compañías internacionales. Un ejemplo: La compañía de automóviles, Toyota Motor Europe, tiene una filial española, francesa, británica. Entonces, si una persona compra un automóvil en Toyota España y luego se muda a Francia, la compañía pierde esa información. Si la compañía quiere proveer un mejor servicio al cliente deberían integrar su base de datos de servicio al cliente”, indica Stonebreaker. Su estrategia es consolidar 250 base de datos en 40 idiomas. “Están en el proceso de hacer eso”. El problema de las grandes empresas no es integrar múltiples bases de datos sino también homologar los datos.&lt;/p&gt;
+&lt;div id=&#34;desafíos-del-big-data-modelo-de-predicción-de-demanda-y-precios-óptimos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Desafíos del Big Data: Modelo de predicción de demanda y precios óptimos&lt;/h2&gt;
+&lt;p&gt;Según Stonebraker, un gran desafío que enfrenta el mercado y las empresas es la optimización de sus ingresos. “¿Cómo pueden utilizar las empresas, el “aprendizaje automático” o el “machine learning” para tener un mejor retorno de la inversión?”, se pregunta el científico.&lt;/p&gt;
+&lt;p&gt;“Mi ejemplo favorito es en la industria hotelera de Estados Unidos. El precio de la habitación de cualquier hotel varía según la cantidad de habitaciones que tengan, y con cuánto tiempo de anticipación reserve el cliente. Si tienen muchas habitaciones sin vender, el precio baja. Entonces, ¿Qué te gustaría si fueras dueño de un hotel? Un modelo predictivo que predeciría cuál es el precio óptimo para cobrar por una habitación de hotel en una fecha determinada”, indica.&lt;/p&gt;
+&lt;p&gt;El experto, indica que el problema del Aprendizaje Automático y las empresas, es que a menudo recopilar los datos que necesitas es costoso y, a menos que haya suficiente valor en el modelo predictivo, no vale la pena hacerlo.&lt;/p&gt;
+&lt;p&gt;El aprendizaje automático o Machine Learning generalmente depende de una estrategia de integración de datos, y ese es otro problema de Big Data, las compañías se enfrentan a esto. Otro tópico que será interesante para el científico de la computación es de qué manera se utilizará los datos generados por el Internet de las Cosas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;datos-médicos-el-dilema-que-viene&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Datos Médicos: el dilema que viene&lt;/h2&gt;
+&lt;p&gt;Con todo, Michael Stonebreaker sostiene que en los próximos años uno de los grandes desafíos será la privacidad de los datos médicos de las personas.&lt;/p&gt;
+&lt;p&gt;“El cuidado de la salud de las personas será un gran desafío para los profesionales relacionados con las bases de datos. Es decir, la construcción de una base de datos de exámenes médicos, consistente a la que el médico pueda recurrir a la hora de un tratamiento o diagnóstico”, indica.&lt;/p&gt;
+&lt;p&gt;“Un médico puede nombrar un síntoma como dolor de pecho y otro, angustia. No hay una consistencia en la terminología”.
+Entonces, ¿Aconseja a los gobiernos de los países una estrategia coherente para los datos?&lt;/p&gt;
+&lt;p&gt;“Sí. Todo Servicio Nacional de Salud debería tener una estrategia coherente de datos porque la revisión del retorno de la inversión será gigantesca”, explica.&lt;/p&gt;
+&lt;p&gt;Entonces, ¿Qué pasa con la transparencia y la privacidad de los datos médicos?&lt;/p&gt;
+&lt;p&gt;“La privacidad es un gran problema y en el momento en que tengamos un sistema como el que describí, los médicos podrán realizar consultas que indiquen quién más tiene este tipo de síntomas. Si el sistema permitiera aquella acción, las probabilidades de que el médico pueda identificar de manera única a personas con los mismos síntomas son muy altas”.&lt;/p&gt;
+&lt;p&gt;“Creo que el beneficio propio de tener datos médicos y la privacidad de las personas son supuestos y la utilización de estos, es una decisión que depende de la sociedad. Mi apuesta, es que finalmente cada persona decidirá cómo utilizar sus datos.”Estoy dispuesto a compartir mis datos o no&amp;quot;.&lt;/p&gt;
+&lt;p&gt;“Mi sensación es que la única forma de proteger nuestra privacidad, es que haya leyes al respecto. Técnicamente en este momento hay muchas organizaciones que saben mucho de ti. Entonces, creo que la respuesta a la privacidad en su mayoría es legal y no técnica”, finaliza.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
