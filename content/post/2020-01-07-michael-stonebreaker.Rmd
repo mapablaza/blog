@@ -17,7 +17,7 @@ El científico quien ayudó a crear la mayoría de las bases de datos relacional
 
 “Este consejo se lo digo incluso a compañías internacionales. Un ejemplo: La compañía de automóviles, Toyota Motor Europe, tiene una filial española, francesa, británica. Entonces, si una persona compra un automóvil en Toyota España y luego se muda a Francia, la compañía pierde esa información. Si la compañía quiere proveer un mejor servicio al cliente deberían integrar su base de datos de servicio al cliente”, indica Stonebreaker. Su estrategia es consolidar 250 base de datos en 40 idiomas. “Están en el proceso de hacer eso”. El problema de las grandes empresas no es integrar múltiples bases de datos sino también homologar los datos.
 
-## Desafíos del Big Data: Modelo de predicción de demanda y precios óptimos
+### Desafíos del Big Data: Modelo de predicción de demanda y precios óptimos
 
 Según Stonebraker, un gran desafío que enfrenta el mercado y las empresas es la optimización de sus ingresos. “¿Cómo pueden utilizar las empresas, el “aprendizaje automático” o el “machine learning” para tener un mejor retorno de la inversión?”, se pregunta el científico. 
 
@@ -27,7 +27,7 @@ El experto, indica que el problema del Aprendizaje Automático y las empresas, e
 
 El aprendizaje automático o Machine Learning generalmente depende de una estrategia de integración de datos, y ese es otro problema de Big Data, las compañías se enfrentan a esto. Otro tópico que será interesante para el científico de la computación es de qué manera se utilizará los datos generados por el Internet de las Cosas. 
 
-## Datos Médicos: el dilema que viene
+### Datos Médicos: el dilema que viene
 
 Con todo, Michael Stonebreaker sostiene que en los próximos años uno de los grandes desafíos será la privacidad de los datos médicos de las personas. 
 

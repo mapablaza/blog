@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Marta Apablaza</title>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Bigdata</title>
+      <title>BigData</title>
       <link>/blog/tags/bigdata/</link>
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
@@ -21,7 +21,7 @@
     </item>
     
     <item>
-      <title>Cienciasdelacomputación</title>
+      <title>CienciasdelaComputación</title>
       <link>/blog/tags/cienciasdelacomputaci%C3%B3n/</link>
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
@@ -30,7 +30,7 @@
     </item>
     
     <item>
-      <title>Computerscience</title>
+      <title>ComputerScience</title>
       <link>/blog/tags/computerscience/</link>
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       

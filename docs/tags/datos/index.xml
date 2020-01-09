@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Datos on Marta Apablaza</title>
@@ -12,23 +12,12 @@
     
     
     <item>
-      <title>I&#39;m a Pickle</title>
-      <link>/blog/2020/01/07/im-a-pickle/</link>
-      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2020/01/07/im-a-pickle/</guid>
-      <description>I’m Pickle Rick! Ok, este post es un ejemplo Acá le pongo texto challa, después borra este post
-Estoy en modo edici´on, blogdown va a cachar los cambios que guarde y actualiza el html</description>
-    </item>
-    
-    <item>
       <title>Michael Stonebreaker: “La privacidad de los datos es un tema legal y no técnico”</title>
       <link>/blog/2020/01/07/michael-stonebreaker-la-privacidad-de-los-datos-es-un-tema-legal-y-no-t%C3%A9cnico/</link>
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/2020/01/07/michael-stonebreaker-la-privacidad-de-los-datos-es-un-tema-legal-y-no-t%C3%A9cnico/</guid>
-      <description>El científico quien ayudó a crear la mayoría de las bases de datos relacionales del mercado, reflexiona sobre la manera en que los datos son usados en el mundo empresarial al mismo tiempo que afirma que el uso y privacidad de los datos médicos de las personas es un tema que debe reflexionar la sociedad en conjunto y no sólo los cientistas de datos.
-“Una de las primeras cosas que le digo a cada empresa que conozco es que deben tener una estrategia de integración de datos”, indica Michael Stonebreaker, Premio Turing 2014 y creador del concepto “Big data” en un break del Heildelberg Laurate Forum.</description>
+      <description>El científico quien ayudó a crear la mayoría de las bases de datos relacionales reflexiona sobre datos y privacidad</description>
     </item>
     
   </channel>
