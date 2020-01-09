@@ -19,7 +19,7 @@ rssLimit = 3
     url = "/categories/"
 
 [params]
-    description = "Periodista interesada en temas de educación y tecnología."
+    description = "Periodista y Comunicadora de la Ciencia. Matemáticas, Computación e Ingeniería"
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
