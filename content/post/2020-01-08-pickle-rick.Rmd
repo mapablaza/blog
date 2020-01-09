@@ -11,4 +11,7 @@ summary: 'Vean Rick and Morty'
 knitr::opts_chunk$set(message = F, error = F, warning = F, cache = T, comment = NA, fig.align = "center", dpi = 100, fig.width = 6, fig.height = 5, tidy = F)
 ```
 
-I'm Pickle Rick!
+I'm Pickle Rick! Ok, este post es un ejemplo
+Acá le pongo texto challa, después borra este post
+
+Estoy en modo edici´on, blogdown va a cachar los cambios que guarde y actualiza el html

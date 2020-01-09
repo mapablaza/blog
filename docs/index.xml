@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marta Apablaza</title>
@@ -17,10 +18,9 @@
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/2020/01/07/im-a-pickle/</guid>
-      <description>
-
-
-&lt;p&gt;I’m Pickle Rick!&lt;/p&gt;
+      <description>&lt;p&gt;I’m Pickle Rick! Ok, este post es un ejemplo
+Acá le pongo texto challa, después borra este post&lt;/p&gt;
+&lt;p&gt;Estoy en modo edici´on, blogdown va a cachar los cambios que guarde y actualiza el html&lt;/p&gt;
 </description>
     </item>
     
@@ -30,10 +30,7 @@
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/2020/01/07/michael-stonebreaker-la-privacidad-de-los-datos-es-un-tema-legal-y-no-t%C3%A9cnico/</guid>
-      <description>
-
-
-&lt;p&gt;El científico quien ayudó a crear la mayoría de las bases de datos relacionales del mercado, reflexiona sobre la manera en que los datos son usados en el mundo empresarial al mismo tiempo que afirma que el uso y privacidad de los datos médicos de las personas es un tema que debe reflexionar la sociedad en conjunto y no sólo los cientistas de datos.&lt;/p&gt;
+      <description>&lt;p&gt;El científico quien ayudó a crear la mayoría de las bases de datos relacionales del mercado, reflexiona sobre la manera en que los datos son usados en el mundo empresarial al mismo tiempo que afirma que el uso y privacidad de los datos médicos de las personas es un tema que debe reflexionar la sociedad en conjunto y no sólo los cientistas de datos.&lt;/p&gt;
 &lt;p&gt;“Una de las primeras cosas que le digo a cada empresa que conozco es que deben tener una estrategia de integración de datos”, indica Michael Stonebreaker, Premio Turing 2014 y creador del concepto “Big data” en un break del Heildelberg Laurate Forum.&lt;/p&gt;
 &lt;p&gt;“Este consejo se lo digo incluso a compañías internacionales. Un ejemplo: La compañía de automóviles, Toyota Motor Europe, tiene una filial española, francesa, británica. Entonces, si una persona compra un automóvil en Toyota España y luego se muda a Francia, la compañía pierde esa información. Si la compañía quiere proveer un mejor servicio al cliente deberían integrar su base de datos de servicio al cliente”, indica Stonebreaker. Su estrategia es consolidar 250 base de datos en 40 idiomas. “Están en el proceso de hacer eso”. El problema de las grandes empresas no es integrar múltiples bases de datos sino también homologar los datos.&lt;/p&gt;
 &lt;div id=&#34;desafíos-del-big-data-modelo-de-predicción-de-demanda-y-precios-óptimos&#34; class=&#34;section level2&#34;&gt;
