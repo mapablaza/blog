@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>/blog/tags/blockchain/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/categories/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
@@ -23,12 +28,12 @@
   </url>
   
   <url>
-    <loc>/blog/categories/datos/</loc>
+    <loc>/blog/tags/datos/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/datos/</loc>
+    <loc>/blog/categories/datos/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -54,6 +59,16 @@
   
   <url>
     <loc>/blog/tags/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/vincent-cerf/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2020/01/07/por-qu%C3%A9-el-hombre-que-invent%C3%B3-internet-desconf%C3%ADa-de-las-criptomonedas/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
   </url>
   

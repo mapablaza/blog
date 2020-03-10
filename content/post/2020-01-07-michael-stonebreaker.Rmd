@@ -4,14 +4,14 @@ author: 'Marta Apablaza R'
 date: 2020-01-07
 categories: ['Datos']
 tags: ['Michael Stonebreaker', 'BigData', 'ComputerScience', 'CienciasdelaComputación', 'Datos']
-summary: 'El científico quien ayudó a crear la mayoría de las bases de datos relacionales reflexiona sobre datos y privacidad'
+summary: 'El científico que ayudó a crear la mayoría de las bases de datos relacionales reflexiona sobre datos y privacidad'
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
 knitr::opts_chunk$set(message = F, error = F, warning = F, cache = T, comment = NA, fig.align = "center", dpi = 100, fig.width = 6, fig.height = 5, tidy = F)
 ```
 
-El científico quien ayudó a crear la mayoría de las bases de datos relacionales del mercado, reflexiona sobre la manera en que los datos son usados en el mundo empresarial al mismo tiempo que afirma que el uso y privacidad de los datos médicos de las personas es un tema que debe reflexionar la sociedad en conjunto y no sólo los cientistas de datos. 
+El científico que ayudó a crear la mayoría de las bases de datos relacionales del mercado, reflexiona sobre la manera en que los datos son usados en el mundo empresarial. Asimismo, afirma que es necesario una discusión social sobre la privacidad de los datos. 
 
 “Una de las primeras cosas que le digo a cada empresa que conozco es que deben tener una estrategia de integración de datos”, indica Michael Stonebreaker, Premio Turing 2014 y creador del concepto “Big data” en un break del Heildelberg Laurate Forum. 
 
