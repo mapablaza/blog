@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Marta Apablaza</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-cl</language>
-    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Epistemonikos: lo que hay que conocer sobre el COVID-19</title>
+      <link>/blog/2020/04/07/epistemonikos-lo-que-hay-que-conocer-sobre-el-covid-19/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020/04/07/epistemonikos-lo-que-hay-que-conocer-sobre-el-covid-19/</guid>
+      <description>Epistemonikos, plataforma chilena que tiene por objetivo facilitar la toma de decisiones en instituciones de salud, ha tomado protagonismo en medio de la emergencia provocada por el avance de este virus</description>
+    </item>
     
     <item>
       <title>¿Por qué el hombre que inventó internet desconfía de las criptomonedas?</title>
@@ -21,12 +30,12 @@
     </item>
     
     <item>
-      <title>Michael Stonebreaker: “La privacidad de los datos es un tema legal y no técnico”</title>
-      <link>/blog/2020/01/07/michael-stonebreaker-la-privacidad-de-los-datos-es-un-tema-legal-y-no-t%C3%A9cnico/</link>
-      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      <title>¿Por qué el hombre que inventó internet desconfía de las criptomonedas?</title>
+      <link>/blog/2020/03/09/por-qu%C3%A9-el-hombre-que-invent%C3%B3-internet-desconf%C3%ADa-de-las-criptomonedas/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2020/01/07/michael-stonebreaker-la-privacidad-de-los-datos-es-un-tema-legal-y-no-t%C3%A9cnico/</guid>
-      <description>El científico que ayudó a crear la mayoría de las bases de datos relacionales reflexiona sobre datos y privacidad</description>
+      <guid>/blog/2020/03/09/por-qu%C3%A9-el-hombre-que-invent%C3%B3-internet-desconf%C3%ADa-de-las-criptomonedas/</guid>
+      <description>Blockchain es como la aspirina de las ciencias de la computación. Las personas creen que van a solucionar muchos problemas con esta tecnología y no creo que sea el caso.</description>
     </item>
     
   </channel>
